@@ -1,4 +1,3 @@
-const Sequelize = require('sequelize')
 const shortid = require('shortid')
 
 const Url = require('../models/Url')
@@ -12,7 +11,8 @@ exports.shorten = async function (ctx) {
   const url = await Url.create({ id, target })
 
   ctx.body = {
-    url
+    hash: url.id,
+    target: url.target
   }
 }
 
