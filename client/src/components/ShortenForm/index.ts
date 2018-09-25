@@ -1,0 +1,1 @@
+export { ShortenForm } from './ShortenForm';
