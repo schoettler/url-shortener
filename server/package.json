@@ -4,8 +4,9 @@
   "repository": "git@github.com:schoettler/url-shortener.git",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "cross-env NODE_ENVIRONMENT=production node index.js"
+    "dev": "NODE_ENV=development nodemon index.js",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "test": "NODE_ENV=test jest --verbose --forceExit"
   },
   "dependencies": {
     "@koa/cors": "^2.2.2",
@@ -25,8 +26,10 @@
     "sqlite3": "^4.0.2"
   },
   "devDependencies": {
+    "jest": "^23.6.0",
     "nodemon": "^1.18.4",
-    "standard": "^12.0.1"
+    "standard": "^12.0.1",
+    "supertest": "^3.3.0"
   },
   "private": true
 }
