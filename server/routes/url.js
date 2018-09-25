@@ -1,6 +1,7 @@
 const Router = require('koa-router')
-const router = new Router()
 const Ctrl = require('../controllers/url')
+
+const router = new Router()
 
 router.post('/', Ctrl.shorten)
 router.get('/:hash', Ctrl.getUrl)

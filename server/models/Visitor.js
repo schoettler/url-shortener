@@ -9,7 +9,7 @@ const Visitor = db.define('Visitor', {
     allowNull: false
   },
   user_agent: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING
   },
   url_id: {
     type: DataTypes.STRING,
@@ -27,8 +27,8 @@ Visitor.uniqueCountByHash = async function (hash) {
     FROM Visitors 
     WHERE Visitors.url_id = '${hash}'; 
   `)
-  
-  return res[0][0].count;
+
+  return res[0][0].count
 }
 
 Visitor.findVisitorsByHash = async function (hash) {
@@ -38,11 +38,11 @@ Visitor.findVisitorsByHash = async function (hash) {
     WHERE url_id = '${hash}' 
     ORDER BY ip ASC
   `)
-  
-  return res[0];
+
+  return res[0]
 }
 
-Visitor.findVisitsByHash= async function (hash) {
+Visitor.findVisitsByHash = async function (hash) {
   const res = await db.query(`
     SELECT ip, createdAt AS visitedAt
     FROM Visitors
@@ -50,7 +50,7 @@ Visitor.findVisitsByHash= async function (hash) {
     ORDER BY ip ASC
   `)
 
-  return res[0];
+  return res[0]
 }
 
 module.exports = Visitor

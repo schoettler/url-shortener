@@ -3,28 +3,11 @@
   "description": "Simple URL shortener",
   "repository": "git@github.com:schoettler/url-shortener.git",
   "license": "MIT",
-  "main": "index.js",
   "scripts": {
-    "dev": "nodemon index",
-    "start": "cross-env NODE_ENVIRONMENT=production node index"
-  },
-  "dependencies": {
-    "@koa/cors": "^2.2.2",
-    "cross-env": "^5.2.0",
-    "dotenv": "^6.0.0",
-    "koa": "^2.5.2",
-    "koa-bodyparser": "^4.2.1",
-    "koa-helmet": "^4.0.0",
-    "koa-logger": "^3.2.0",
-    "koa-respond": "^1.0.1",
-    "koa-router": "^7.4.0",
-    "sequelize": "^5.0.0-beta.12",
-    "shortid": "^2.2.13",
-    "sqlite3": "^4.0.2"
-  },
-  "private": true,
-  "devDependencies": {
-    "nodemon": "^1.18.4"
+    "start": "yarn start:client && yarn start:server",
+    "start:server": "cd server && yarn start",
+    "start:client": "cd client && yarn build",
+    "lint": "standard server/**/*.js client/**/*.js"
   },
   "private": true
 }

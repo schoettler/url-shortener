@@ -7,9 +7,9 @@ const Url = db.define('Url', {
     type: DataTypes.STRING,
     primaryKey: true
   },
-  target: { 
+  target: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: false
   }
 })
 
